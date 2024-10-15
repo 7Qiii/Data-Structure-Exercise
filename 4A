@@ -28,7 +28,7 @@ AABBCEF
 Sample Output
 5
 23
-
+'''c++
 #include <iostream>
 #include <queue>
 #include <vector>
@@ -110,3 +110,4 @@ int main() {
         cout << sum << endl;  
 }
 }
+'''
