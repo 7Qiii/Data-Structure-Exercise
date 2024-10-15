@@ -17,7 +17,7 @@ struct Compare {
     bool operator()(TreeNode *a, TreeNode *b) {
         return a->weight > b->weight;
     }
-}; // 添加分号
+}; // 娣诲姞鍒嗗彿
 
 TreeNode* Huffman(priority_queue<TreeNode*, vector<TreeNode*>, Compare> &pq, vector<int> &precin, vector<char> &characters) {
     for (int i = 0; i < precin.size(); i++) {
@@ -55,10 +55,10 @@ int main() {
         int m;
         cin >> m;
         vector<int> precin(m);
-        vector<char> characters(m); // 存储字符
+        vector<char> characters(m); // 瀛樺偍瀛楃
         for (int i = 0; i < m; i++) {
-            cin >> characters[i]; // 读取字符
-            cin >> precin[i]; // 读取权重
+            cin >> characters[i]; // 璇诲彇瀛楃
+            cin >> precin[i]; // 璇诲彇鏉冮噸
         }
         string putin;
         cin.ignore();
@@ -72,7 +72,7 @@ int main() {
             if (codeMap.find(c) != codeMap.end()) {  
                 sum += codeMap[c].length();  
             } else {  
-                // 处理未在字符集中找到的字符（可选）  
+                // 澶勭悊鏈湪瀛楃闆嗕腑鎵惧埌鐨勫瓧绗︼紙鍙�夛級  
                 cerr << "Character " << c << " not found in Huffman tree!" << endl;  
             }  
         }  
