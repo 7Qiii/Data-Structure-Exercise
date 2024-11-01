@@ -1,34 +1,3 @@
-Description
-Given a collection of characters with their frequencies, please try to build the Huffman code for them,  and use the code to encode the input string. Finally,  you are required to output the length of encoded string.
-
-
-
-Input
-The first line indicates the number  of the test cases, N . In each of the following N test cases, the first line indicates the number of the characters  needed to code, Ti.   Each of the following Ti lines shows a character and its freqency. The final line of each test case is the input string needed to encode.
-
-Output
-The output consits of N lines. The No. i line is the length of the encoded string of No. i test case.
-
-Sample Input
-2
-3
-A 1
-B 2
-C 5
-ABC
-6
-A 1
-B 2
-C 4
-D 5
-E 6
-F 10
-AABBCEF
-
-Sample Output
-5
-23
-
 #include <iostream>
 #include <queue>
 #include <vector>
@@ -48,7 +17,7 @@ struct Compare {
     bool operator()(TreeNode *a, TreeNode *b) {
         return a->weight > b->weight;
     }
-}; // 娣诲姞鍒嗗彿
+}; // 添加分号
 
 TreeNode* Huffman(priority_queue<TreeNode*, vector<TreeNode*>, Compare> &pq, vector<int> &precin, vector<char> &characters) {
     for (int i = 0; i < precin.size(); i++) {
@@ -86,10 +55,10 @@ int main() {
         int m;
         cin >> m;
         vector<int> precin(m);
-        vector<char> characters(m); // 瀛樺偍瀛楃
+        vector<char> characters(m); // 存储字符
         for (int i = 0; i < m; i++) {
-            cin >> characters[i]; // 璇诲彇瀛楃
-            cin >> precin[i]; // 璇诲彇鏉冮噸
+            cin >> characters[i]; // 读取字符
+            cin >> precin[i]; // 读取权重
         }
         string putin;
         cin.ignore();
@@ -103,11 +72,10 @@ int main() {
             if (codeMap.find(c) != codeMap.end()) {  
                 sum += codeMap[c].length();  
             } else {  
-                // 澶勭悊鏈湪瀛楃闆嗕腑鎵惧埌鐨勫瓧绗︼紙鍙�夛級  
+                // 处理未在字符集中找到的字符（可选）  
                 cerr << "Character " << c << " not found in Huffman tree!" << endl;  
             }  
         }  
         cout << sum << endl;  
 }
 }
-
